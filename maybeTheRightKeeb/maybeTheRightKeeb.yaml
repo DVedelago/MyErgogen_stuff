@@ -1,0 +1,99 @@
+meta:
+  engine: 4.1.0
+
+units: 
+  # proxy units
+  kx:                         U
+  ky:                         U
+
+  # padding var
+  pxy:                        U + 2
+
+  #mirroring distance
+  mirror_dist:                15U
+
+points:
+  zones:
+    alphanum:
+      mirror:
+        distance:             mirror_dist      
+      columns: 
+        pinky:
+          key.spread:         pxy
+          key.splay:          2
+
+        ring:        
+          key.spread:         pxy
+          key.stagger:        10
+          key.splay:          -3
+          
+        middle:
+          key.spread:         pxy
+          key.stagger:        5
+        
+        index:
+          key.spread:         pxy
+          key.stagger:        -5
+        
+        index_stretch:
+          key.spread:         U
+
+      rows:
+        alpha1:
+        alpha2:
+        alpha3:
+        mod:
+
+    thumbfan:
+      mirror:
+        distance:             mirror_dist   
+      key:
+        padding:              pxy
+        spread:               pxy
+      anchor:
+        ref:                  alphanum_index_stretch_alpha1
+        shift:                [7,-2]
+        
+
+      columns:
+        spazio:
+          key.width:          1.5U
+          key.rotate:         -93
+          key.splay:          -10
+          key.shift:          [U-2,-3] 
+
+        disazio:
+          key.rotate:         -5
+          key.splay:          -7
+          key.shift:          [U,-5]
+        
+      rows:
+        fan:
+
+
+
+    numpad:
+      anchor:
+        ref:                  alphanum_pinky_alpha3
+        shift:                [-70,-35]
+        rotate:               -2
+        
+      columns:
+        147:
+        2580:
+        369:
+
+      rows:
+        operators:
+        one47:
+        two58:
+        three69:
+        zero:
+
+      
+outlines:
+pcbs:
+cases:
+
+
+# APORCODDIOLAMADONNADICRISTO
