@@ -9,8 +9,13 @@ units:
   # padding var
   pxy:                        U + 2
 
-  #mirroring distance
+  # mirroring distance
   mirror_dist:                15U
+
+  # outline dims
+  outline_dim:                1.5U
+  brdOutlPad:          0
+  fillet_radius:              10
 
 points:
   zones:
@@ -34,6 +39,7 @@ points:
         index:
           key.spread:         pxy
           key.stagger:        -5
+          key.splay:          -3
         
         index_stretch:
           key.spread:         U
@@ -52,8 +58,7 @@ points:
         spread:               pxy
       anchor:
         ref:                  alphanum_index_stretch_alpha1
-        shift:                [7,-2]
-        
+        shift:                [7,-2] 
 
       columns:
         spazio:
@@ -79,18 +84,124 @@ points:
         rotate:               -2
         
       columns:
-        147:
-        2580:
-        369:
-
+        C1:
+        C2:
+        C3:
+    
       rows:
-        operators:
-        one47:
-        two58:
-        three69:
-        zero:
+        R1:
+        R2:
+        R3:
+        R4:
 
+     
       
 outlines:
+  # raw:
+  #   - what:                   rectangle
+  #     where:                  true
+  #     size:                   [pxy, pxy]
+
+  keys:
+    - what:                   rectangle
+      where:                  true
+      size:                   [pxy-0.5, pxy-0.5]
+
+  board: 
+      - what:                 polygon
+        operation:            stack
+        points:
+          # start from bottom-left corner and go CW
+          # bottom left corner of numpad
+          - ref:              numpad_C1_R1
+            shift:            [brdOutlPad, brdOutlPad]
+          # upper left corner of numpad
+          - ref:              numpad_C1_R4
+            shift:            [brdOutlPad, brdOutlPad]
+          - ref:              numpad_C2_R4
+            shift:            [brdOutlPad, brdOutlPad]
+          - ref:              numpad_C3_R4
+            shift:            [brdOutlPad, brdOutlPad]
+          # pinky top
+          - ref:              alphanum_pinky_mod
+            shift:            [brdOutlPad, brdOutlPad]
+          # ring top
+          - ref:              alphanum_ring_mod
+            shift:            [brdOutlPad, brdOutlPad]
+          # middle top
+          - ref:              alphanum_middle_mod
+            shift:            [brdOutlPad, brdOutlPad]
+          # index top
+          - ref:              alphanum_index_mod
+            shift:            [brdOutlPad, brdOutlPad]
+          # index stretch top
+          - ref:              alphanum_index_stretch_mod
+            shift:            [brdOutlPad, brdOutlPad]
+          # mirror index stretch top
+          - ref:              mirror_alphanum_index_stretch_mod
+            shift:            [brdOutlPad, brdOutlPad]     
+          # mirror index top
+          - ref:              mirror_alphanum_index_mod
+            shift:            [brdOutlPad, brdOutlPad]                         
+          # mirror middle top
+          - ref:              mirror_alphanum_middle_mod
+            shift:            [brdOutlPad, brdOutlPad]          
+          # mirror ring top
+          - ref:              mirror_alphanum_ring_mod
+            shift:            [brdOutlPad, brdOutlPad] 
+          # mirror pinky top
+          - ref:              mirror_alphanum_pinky_mod
+            shift:            [brdOutlPad, brdOutlPad]     
+          # mirror pinky bottom                          
+          - ref:              mirror_alphanum_pinky_alpha1
+            shift:            [brdOutlPad, brdOutlPad]  
+          # mirror ring bot
+          - ref:              mirror_alphanum_ring_alpha1
+            shift:            [brdOutlPad, brdOutlPad]
+          # mirror mid bot
+          - ref:              mirror_alphanum_middle_alpha1
+            shift:            [brdOutlPad, brdOutlPad]
+          # mirror index bot
+          - ref:              mirror_alphanum_index_alpha1
+            shift:            [brdOutlPad, brdOutlPad] 
+          # mirror index stretch
+          - ref:              mirror_alphanum_index_stretch_alpha1
+            shift:            [brdOutlPad, brdOutlPad]     
+          # mirror thumbfan 
+          - ref:              mirror_thumbfan_spazio_fan
+            shift:            [brdOutlPad, brdOutlPad]
+          - ref:              mirror_thumbfan_disazio_fan
+            shift:            [brdOutlPad, brdOutlPad]
+          # thumbfan    
+          - ref:              thumbfan_disazio_fan
+            shift:            [brdOutlPad, brdOutlPad] 
+          - ref:              thumbfan_spazio_fan
+            shift:            [brdOutlPad, brdOutlPad]  
+          # index stretch bot
+          - ref:              alphanum_index_stretch_alpha1
+            shift:            [brdOutlPad, brdOutlPad] 
+          # index bot
+          - ref:              alphanum_index_alpha1
+            shift:            [brdOutlPad, brdOutlPad] 
+          # middle bot
+          - ref:              alphanum_middle_alpha1
+            shift:            [brdOutlPad, brdOutlPad] 
+          # ring bot
+          - ref:              alphanum_ring_alpha1
+            shift:            [brdOutlPad, brdOutlPad]                                
+          # pinky bot
+          - ref:              alphanum_pinky_alpha1
+            shift:            [brdOutlPad, brdOutlPad]           
+          # numpad bot right corner
+          - ref:              numpad_C3_R1
+            shift:            [brdOutlPad, brdOutlPad]           
+
+
+
+   
+          
+          
+
+
 pcbs:
 cases:
