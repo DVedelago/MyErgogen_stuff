@@ -14,7 +14,7 @@ units:
 
   # outline dims
   outline_dim:                1.5U
-  brdOutlPad:          0
+  brdOutlPad:                 0.5pxy
   fillet_radius:              10
 
 points:
@@ -111,13 +111,14 @@ outlines:
       - what:                 polygon
         operation:            stack
         points:
+        #TODO: shift points out of the vertices like flatfootfox
           # start from bottom-left corner and go CW
           # bottom left corner of numpad
           - ref:              numpad_C1_R1
-            shift:            [brdOutlPad, brdOutlPad]
+            shift:            [-brdOutlPad, -brdOutlPad]
           # upper left corner of numpad
           - ref:              numpad_C1_R4
-            shift:            [brdOutlPad, brdOutlPad]
+            shift:            [-brdOutlPad, brdOutlPad]
           - ref:              numpad_C2_R4
             shift:            [brdOutlPad, brdOutlPad]
           - ref:              numpad_C3_R4
@@ -194,7 +195,8 @@ outlines:
             shift:            [brdOutlPad, brdOutlPad]           
           # numpad bot right corner
           - ref:              numpad_C3_R1
-            shift:            [brdOutlPad, brdOutlPad]           
+            shift:            [brdOutlPad, brdOutlPad]  
+        fillet:               fillet_radius        
 
 
 
