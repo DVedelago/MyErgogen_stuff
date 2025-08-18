@@ -14,8 +14,8 @@ units:
 
   # outline dims
   outline_dim:                1.5U
-  brdOutlPad:                 0.5pxy
-  fillet_radius:              10
+  brdOutlPad:                 0.5U
+  fillet_radius:              2
 
 points:
   zones:
@@ -97,10 +97,10 @@ points:
      
       
 outlines:
-  # raw:
-  #   - what:                   rectangle
-  #     where:                  true
-  #     size:                   [pxy, pxy]
+  raw:
+    - what:                   rectangle
+      where:                  true
+      size:                   [pxy, pxy]
 
   keys:
     - what:                   rectangle
@@ -111,7 +111,6 @@ outlines:
       - what:                 polygon
         operation:            stack
         points:
-        #TODO: shift points out of the vertices like flatfootfox
           # start from bottom-left corner and go CW
           # bottom left corner of numpad
           - ref:              numpad_C1_R1
@@ -119,90 +118,154 @@ outlines:
           # upper left corner of numpad
           - ref:              numpad_C1_R4
             shift:            [-brdOutlPad, brdOutlPad]
-          - ref:              numpad_C2_R4
-            shift:            [brdOutlPad, brdOutlPad]
+          # upper right corner of numpad
           - ref:              numpad_C3_R4
             shift:            [brdOutlPad, brdOutlPad]
           # pinky top
           - ref:              alphanum_pinky_mod
+            shift:            [-brdOutlPad, brdOutlPad]
+          - ref:              alphanum_pinky_mod
             shift:            [brdOutlPad, brdOutlPad]
+
           # ring top
           - ref:              alphanum_ring_mod
+            shift:            [-brdOutlPad, brdOutlPad]
+          - ref:              alphanum_ring_mod
             shift:            [brdOutlPad, brdOutlPad]
+
           # middle top
           - ref:              alphanum_middle_mod
+            shift:            [-brdOutlPad, brdOutlPad]
+          - ref:              alphanum_middle_mod
             shift:            [brdOutlPad, brdOutlPad]
+
           # index top
           - ref:              alphanum_index_mod
-            shift:            [brdOutlPad, brdOutlPad]
+            shift:            [-brdOutlPad, brdOutlPad]
+          
           # index stretch top
           - ref:              alphanum_index_stretch_mod
             shift:            [brdOutlPad, brdOutlPad]
+
           # mirror index stretch top
           - ref:              mirror_alphanum_index_stretch_mod
-            shift:            [brdOutlPad, brdOutlPad]     
+            shift:            [-brdOutlPad, brdOutlPad] 
+
           # mirror index top
           - ref:              mirror_alphanum_index_mod
-            shift:            [brdOutlPad, brdOutlPad]                         
+            shift:            [brdOutlPad, brdOutlPad]
+
           # mirror middle top
           - ref:              mirror_alphanum_middle_mod
-            shift:            [brdOutlPad, brdOutlPad]          
+            shift:            [brdOutlPad, brdOutlPad]
+          - ref:              mirror_alphanum_middle_mod
+            shift:            [-brdOutlPad, brdOutlPad] 
+
           # mirror ring top
           - ref:              mirror_alphanum_ring_mod
             shift:            [brdOutlPad, brdOutlPad] 
+          - ref:              mirror_alphanum_ring_mod
+            shift:            [-brdOutlPad, brdOutlPad]
+
           # mirror pinky top
           - ref:              mirror_alphanum_pinky_mod
-            shift:            [brdOutlPad, brdOutlPad]     
+            shift:            [brdOutlPad, brdOutlPad]
+          - ref:              mirror_alphanum_pinky_mod
+            shift:            [-brdOutlPad, brdOutlPad] 
+
           # mirror pinky bottom                          
           - ref:              mirror_alphanum_pinky_alpha1
-            shift:            [brdOutlPad, brdOutlPad]  
+            shift:            [-brdOutlPad, -brdOutlPad]
+          - ref:              mirror_alphanum_pinky_alpha1
+            shift:            [brdOutlPad, -brdOutlPad]
+
           # mirror ring bot
           - ref:              mirror_alphanum_ring_alpha1
-            shift:            [brdOutlPad, brdOutlPad]
+            shift:            [-brdOutlPad, -brdOutlPad]
+          - ref:              mirror_alphanum_ring_alpha1
+            shift:            [brdOutlPad, -brdOutlPad]
+
           # mirror mid bot
           - ref:              mirror_alphanum_middle_alpha1
-            shift:            [brdOutlPad, brdOutlPad]
+            shift:            [-brdOutlPad, -brdOutlPad]
+          - ref:              mirror_alphanum_middle_alpha1
+            shift:            [brdOutlPad, -brdOutlPad]
+
           # mirror index bot
           - ref:              mirror_alphanum_index_alpha1
-            shift:            [brdOutlPad, brdOutlPad] 
+            shift:            [-brdOutlPad, -brdOutlPad]
+          - ref:              mirror_alphanum_index_alpha1
+            shift:            [brdOutlPad, -brdOutlPad] 
+
           # mirror index stretch
           - ref:              mirror_alphanum_index_stretch_alpha1
-            shift:            [brdOutlPad, brdOutlPad]     
+            shift:            [-brdOutlPad, -brdOutlPad]
+          - ref:              mirror_alphanum_index_stretch_alpha1
+            shift:            [brdOutlPad, -brdOutlPad]  
+
           # mirror thumbfan 
           - ref:              mirror_thumbfan_spazio_fan
+            shift:            [brdOutlPad, -brdOutlPad]
+          - ref:              mirror_thumbfan_spazio_fan
             shift:            [brdOutlPad, brdOutlPad]
+
           - ref:              mirror_thumbfan_disazio_fan
-            shift:            [brdOutlPad, brdOutlPad]
+            shift:            [brdOutlPad, -brdOutlPad]
+          - ref:              mirror_thumbfan_disazio_fan
+            shift:            [brdOutlPad, -brdOutlPad]
+
           # thumbfan    
           - ref:              thumbfan_disazio_fan
-            shift:            [brdOutlPad, brdOutlPad] 
+            shift:            [brdOutlPad, -brdOutlPad] 
+          - ref:              thumbfan_disazio_fan
+            shift:            [brdOutlPad, -brdOutlPad]
+
           - ref:              thumbfan_spazio_fan
-            shift:            [brdOutlPad, brdOutlPad]  
+            shift:            [brdOutlPad, brdOutlPad]
+          - ref:              thumbfan_spazio_fan
+            shift:            [brdOutlPad, -brdOutlPad] 
+
           # index stretch bot
           - ref:              alphanum_index_stretch_alpha1
-            shift:            [brdOutlPad, brdOutlPad] 
+            shift:            [brdOutlPad, -brdOutlPad] 
+          - ref:              alphanum_index_stretch_alpha1
+            shift:            [brdOutlPad, -brdOutlPad]
+
           # index bot
           - ref:              alphanum_index_alpha1
-            shift:            [brdOutlPad, brdOutlPad] 
+            shift:            [brdOutlPad, -brdOutlPad]
+          - ref:              alphanum_index_alpha1
+            shift:            [-brdOutlPad, -brdOutlPad] 
+
+
           # middle bot
           - ref:              alphanum_middle_alpha1
-            shift:            [brdOutlPad, brdOutlPad] 
+            shift:            [brdOutlPad, -brdOutlPad] 
+          - ref:              alphanum_middle_alpha1
+            shift:            [-brdOutlPad, -brdOutlPad]
+
           # ring bot
           - ref:              alphanum_ring_alpha1
-            shift:            [brdOutlPad, brdOutlPad]                                
+            shift:            [brdOutlPad, -brdOutlPad] 
+          - ref:              alphanum_ring_alpha1
+            shift:            [-brdOutlPad, -brdOutlPad]
+
           # pinky bot
           - ref:              alphanum_pinky_alpha1
-            shift:            [brdOutlPad, brdOutlPad]           
+            shift:            [brdOutlPad, -brdOutlPad] 
+          - ref:              alphanum_pinky_alpha1
+            shift:            [-brdOutlPad, -brdOutlPad] 
+
           # numpad bot right corner
           - ref:              numpad_C3_R1
-            shift:            [brdOutlPad, brdOutlPad]  
+            shift:            [brdOutlPad, -brdOutlPad]  
+            
         fillet:               fillet_radius        
-
-
-
-   
-          
-          
+  # Combination preview showing outline and keys.
+  # combo:
+  #   - name:                   board
+  #   - operation:              subtract
+  #     name:                   keys
 
 
 pcbs:
