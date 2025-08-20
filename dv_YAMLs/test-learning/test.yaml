@@ -7,15 +7,15 @@ units:
   ky:                         U
 
   # padding var
-  pxy:                        U + 2
+  pxy:                        20
 
   # mirroring distance
   mirror_dist:                15U
 
   # outline dims
   outline_dim:                1.5U
-  brdOutlPad:                 0.5u
-  fillet_radius:              2.5
+  brdOutlPad:                 10
+  fillet_radius:              2
 
 points:
   zones:
@@ -74,8 +74,6 @@ points:
         
       rows:
         fan:
-
-
 
     numpad:
       anchor:
@@ -144,6 +142,11 @@ outlines:
           # index stretch top
           - ref:              alphanum_index_stretch_mod
             shift:            [brdOutlPad, brdOutlPad]
+
+          - ref:              alphanum_index_stretch_mod
+            shift:            [brdOutlPad+15, -2brdOutlPad]
+          - ref:              mirror_alphanum_index_stretch_mod
+            shift:            [brdOutlPad+15, -2brdOutlPad]
 
           # mirror index stretch top
           - ref:              mirror_alphanum_index_stretch_mod
@@ -271,5 +274,57 @@ pcbs:
   test:
     outlines:
       main:
-        outline: board
+        outline:              board
+    
+    footprints:
+      mx_hotswap:
+        what:                 mx
+        where:                true
+        params:
+          keycaps:            true
+          reverse:            false
+          hotswap:            true
+          from:               "{{column_net}}"
+          to:                 "{{colrow}}"
+      diode:
+          what:               diode
+          where:              true
+          params:
+            from:             "{{colrow}}"
+            to:               "{{row_net}}"
+          adjust:
+            shift:            [0, -5]
+      nice_nano:
+          what:               ceoloide/mcu_nice_nano
+          params:
+          where:
+            ref:
+              aggregate:
+                parts:        [alphanum_index_stretch_mod, mirror_alphanum_index_stretch_mod]
+            shift:            [0,0]
+            rotate:           -90
+      oled:
+        what:                 oled
+        params:       
+          side:               "F"
+          SDA:                P2
+          SCL:                P3
+        where:
+          ref:
+            aggregate:
+              parts:          [alphanum_index_stretch_mod]
+          shift:              [0, -1]
+          rotate:             -90
+      reset:
+        what:                 button
+        params:               
+          from:               GND
+          to:                 RST
+        where:
+          ref:
+            aggregate:
+              parts:          [alphanum_index_stretch_mod, mirror_alphanum_index_stretch_mod]
+          shift:              [0, -1]
+          rotate:             -90
+      
 cases:
