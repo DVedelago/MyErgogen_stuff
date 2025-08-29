@@ -14,7 +14,7 @@ units:
 
   # outline dims
   outline_dim:                1.5U
-  brdOutlPad:                 10
+  brdOutlPad:                 12
   fillet_radius:              2
 
 points:
@@ -180,76 +180,76 @@ outlines:
           - ref:              mirror_alphanum_pinky_alpha1
             shift:            [brdOutlPad, -brdOutlPad]
 
-          # mirror ring bot
-          - ref:              mirror_alphanum_ring_alpha1
-            shift:            [-brdOutlPad, -brdOutlPad]
-          - ref:              mirror_alphanum_ring_alpha1
-            shift:            [brdOutlPad, -brdOutlPad]
+          # # mirror ring bot
+          # - ref:              mirror_alphanum_ring_alpha1
+          #   shift:            [-brdOutlPad +4, -brdOutlPad]
+          # - ref:              mirror_alphanum_ring_alpha1
+          #   shift:            [brdOutlPad, -brdOutlPad]
 
-          # mirror mid bot
-          - ref:              mirror_alphanum_middle_alpha1
-            shift:            [-brdOutlPad, -brdOutlPad]
-          - ref:              mirror_alphanum_middle_alpha1
-            shift:            [brdOutlPad, -brdOutlPad]
+          # # mirror mid bot
+          # - ref:              mirror_alphanum_middle_alpha1
+          #   shift:            [-brdOutlPad +3, -brdOutlPad]
+          # - ref:              mirror_alphanum_middle_alpha1
+          #   shift:            [brdOutlPad -3, -brdOutlPad]
 
-          # mirror index bot
-          - ref:              mirror_alphanum_index_alpha1
-            shift:            [-brdOutlPad, -brdOutlPad]
-          - ref:              mirror_alphanum_index_alpha1
-            shift:            [brdOutlPad, -brdOutlPad] 
+          # # mirror index bot
+          # - ref:              mirror_alphanum_index_alpha1
+          #   shift:            [-brdOutlPad +2, -brdOutlPad]
+          # - ref:              mirror_alphanum_index_alpha1
+          #   shift:            [brdOutlPad, -brdOutlPad] 
 
-          # mirror index stretch
-          - ref:              mirror_alphanum_index_stretch_alpha1
-            shift:            [-brdOutlPad, -brdOutlPad]
-          - ref:              mirror_alphanum_index_stretch_alpha1
-            shift:            [brdOutlPad, -brdOutlPad]  
+          # # mirror index stretch
+          # - ref:              mirror_alphanum_index_stretch_alpha1
+          #   shift:            [-brdOutlPad, -brdOutlPad]
+          # - ref:              mirror_alphanum_index_stretch_alpha1
+          #   shift:            [brdOutlPad -3, -brdOutlPad]  
 
           # mirror thumbfan 
           - ref:              mirror_thumbfan_spazio_fan
-            shift:            [brdOutlPad, -brdOutlPad]
+            shift:            [brdOutlPad +3, -brdOutlPad]
           - ref:              mirror_thumbfan_spazio_fan
-            shift:            [brdOutlPad, brdOutlPad]
+            shift:            [brdOutlPad +3, brdOutlPad ]
 
           - ref:              mirror_thumbfan_disazio_fan
-            shift:            [brdOutlPad, -brdOutlPad]
+            shift:            [brdOutlPad, -brdOutlPad -3]
           - ref:              mirror_thumbfan_disazio_fan
-            shift:            [brdOutlPad, -brdOutlPad]
+            shift:            [brdOutlPad, -brdOutlPad -3]
 
           # thumbfan    
           - ref:              thumbfan_disazio_fan
-            shift:            [brdOutlPad, -brdOutlPad] 
+            shift:            [brdOutlPad, -brdOutlPad -3] 
           - ref:              thumbfan_disazio_fan
-            shift:            [brdOutlPad, -brdOutlPad]
+            shift:            [brdOutlPad, -brdOutlPad -3]
 
           - ref:              thumbfan_spazio_fan
-            shift:            [brdOutlPad, brdOutlPad]
+            shift:            [brdOutlPad +3, brdOutlPad]
           - ref:              thumbfan_spazio_fan
-            shift:            [brdOutlPad, -brdOutlPad] 
+            shift:            [brdOutlPad +3, -brdOutlPad] 
 
-          # index stretch bot
-          - ref:              alphanum_index_stretch_alpha1
-            shift:            [brdOutlPad, -brdOutlPad] 
-          - ref:              alphanum_index_stretch_alpha1
-            shift:            [brdOutlPad, -brdOutlPad]
+          # # index stretch bot
+          # - ref:              alphanum_index_stretch_alpha1
+          #   shift:            [brdOutlPad, -brdOutlPad] 
+          # - ref:              alphanum_index_stretch_alpha1
+          #   shift:            [brdOutlPad, -brdOutlPad]
 
-          # index bot
-          - ref:              alphanum_index_alpha1
-            shift:            [brdOutlPad, -brdOutlPad]
-          - ref:              alphanum_index_alpha1
-            shift:            [-brdOutlPad, -brdOutlPad] 
+          # # index bot
+          # - ref:              alphanum_index_alpha1
+          #   shift:            [brdOutlPad, -brdOutlPad]
+          # - ref:              alphanum_index_alpha1
+          #   shift:            [-brdOutlPad, -brdOutlPad] 
 
 
-          # middle bot
-          - ref:              alphanum_middle_alpha1
-            shift:            [brdOutlPad, -brdOutlPad] 
-          - ref:              alphanum_middle_alpha1
-            shift:            [-brdOutlPad, -brdOutlPad]
+          # # middle bot
+          # - ref:              alphanum_middle_alpha1
+          #   shift:            [brdOutlPad, -brdOutlPad] 
+          # - ref:              alphanum_middle_alpha1
+          #   shift:            [-brdOutlPad, -brdOutlPad]
 
-          # ring bot
-          - ref:              alphanum_ring_alpha1
-            shift:            [brdOutlPad, -brdOutlPad] 
-          - ref:              alphanum_ring_alpha1
-            shift:            [-brdOutlPad, -brdOutlPad]
+          # # ring bot
+          # - ref:              alphanum_ring_alpha1
+          #   shift:            [brdOutlPad, -brdOutlPad] 
+          # - ref:              alphanum_ring_alpha1
+          #   shift:            [-brdOutlPad, -brdOutlPad]
 
 
           # pinky bot
@@ -294,8 +294,8 @@ pcbs:
             to:               "{{row_net}}"
           adjust:
             shift:            [0, -5]
-      nice_nano:
-          what:               ceoloide/mcu_nice_nano
+      promicro:
+          what:               promicro
           params:
           where:
             ref:
@@ -307,6 +307,8 @@ pcbs:
         what:                 oled
         params:       
           side:               "F"
+          VCC:                {type: 'net', value: 'VCC'},
+          GND:                {type: 'net', value: 'GND'},
           SDA:                P2
           SCL:                P3
         where:
