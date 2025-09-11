@@ -1,0 +1,73 @@
+meta:
+  engine: 4.1.0
+
+units:
+  Ua: U-5
+  kx: U
+  ky: U
+  px: U + 2
+  py: U + 2
+  fillet_radius: 5
+
+points:
+  zones:
+    matrix:
+      rows:
+        bottom:
+        under:
+        home:
+        upper:        
+      
+      columns:
+        pinky_stretch:
+        pinky:
+        ring:
+        middle:
+        index:
+        index_stretch:
+          rows:
+            bottom:
+              width: 1.5U
+          # TODO: shift just the "space" key so to align it with the rest of the column above
+  
+
+          
+
+
+          
+        
+  mirror: &mirror
+    ref: matrix_index_stretch_home
+    distance: 50
+
+outlines:
+  # raw:
+  #   - what: rectangle
+  #     where: true
+  #     size: [px, py]
+  keys:
+    - what: rectangle
+      where: true
+      bound: false
+      size: [kx-0.5,ky-0.5]
+
+  board:
+    - what: polygon
+      operation: stack
+      points: 
+        - ref: matrix_pinky_stretch_upper
+          shift: [-Ua, Ua]
+        - ref: mirror_matrix_pinky_stretch_upper
+          shift: [-Ua, Ua]
+        - ref: mirror_matrix_pinky_stretch_bottom
+          shift: [-Ua, -Ua]
+        - ref: matrix_pinky_stretch_bottom
+          shift: [-Ua, -Ua]
+      fillet: fillet_radius
+  
+  combo:
+    - name: board
+    - operation: subtract
+      name: keys
+  
+
